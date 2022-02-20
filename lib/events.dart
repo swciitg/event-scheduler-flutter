@@ -1,48 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:event_schedular_flutter/event_card.dart';
-
+import 'package:event_schedular_flutter/globals/text_themes.dart';
 
 class Subscriptions extends StatefulWidget {
-  const Subscriptions({ Key? key }) : super(key: key);
+  const Subscriptions({Key? key}) : super(key: key);
 
   @override
   State<Subscriptions> createState() => _SubscriptionsState();
 }
 
 class _SubscriptionsState extends State<Subscriptions> {
-   final List<bool> _isSelected = [true, false];
-   @override
+  final List<bool> _isSelected = [true, false];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
+      body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(children: [
           Row(
             children: [
-              const Expanded(
-                  child: Text(
-                "EVENTS",
-                style: TextStyle(
-                    fontWeight: FontWeight.w800,
-                    fontFamily: 'Roboto',
-                    letterSpacing: 2),
-              )),
+              Expanded(child: MyFonts().heading("EVENTS", Colors.black)),
               Container(
                 child: ToggleButtons(
-                  children: const [
-                    Text(
-                      "Upcoming",
-                      style: TextStyle(fontSize: 9.0, color: Colors.black, fontWeight: FontWeight.w500,),
-                    ),
-                    Text(
-                      "Past",
-                      style: TextStyle(fontSize: 9.0, color: Colors.black, fontWeight: FontWeight.w500,),
-                    )
+                  children: [
+                    MyFonts().togglebutton("Upcoming", Colors.black),
+                    MyFonts().togglebutton("Past", Colors.black)
                   ],
                   isSelected: _isSelected,
-                  // borderColor: const Color(0xFFFEFBFF),
                   fillColor: const Color(0xFFFEFBFF),
-                  // splashColor: const Color(0xff3D55BE),
                   onPressed: (int index) {
                     setState(() {
                       _isSelected[index] = !_isSelected[index];
@@ -61,22 +46,19 @@ class _SubscriptionsState extends State<Subscriptions> {
             ],
           ),
           Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Column(
-                    children: const [
-                      
-                      CustomCard(),
-                      CustomCard(),
-                      CustomCard(),
-                      CustomCard(),
-                      CustomCard(),
-                      CustomCard(),
-                    ],
-                  ))
-          
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: const [
+                  CustomCard(),
+                  CustomCard(),
+                  CustomCard(),
+                  CustomCard(),
+                  CustomCard(),
+                  CustomCard(),
+                ],
+              ))
         ]),
       ),
-
-         );
+    );
   }
 }

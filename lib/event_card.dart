@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:event_schedular_flutter/globals/text_themes.dart';
 
 class CustomCard extends StatefulWidget {
   const CustomCard({Key? key}) : super(key: key);
@@ -37,32 +38,38 @@ class _CustomCardState extends State<CustomCard> {
                   image: DecorationImage(
                       image: NetworkImage("https://i.ibb.co/9qPPgQK/image.png"),
                       fit: BoxFit.cover)),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white, width: 2),
+                          borderRadius: BorderRadius.circular(5)),
                       child: Column(
-                         mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                        
                         children: [
-                        Container(
-                          decoration: BoxDecoration(border: Border.all(color: Colors.white, width: 2 ), borderRadius: BorderRadius.circular(5)),
-                          child: Column(
-                           
-                            
-                            children: [Container(child: const Text('Dec',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
-                            fontSize: 10,
-                            letterSpacing: 0.5)), decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white, width: 2))),), const Text('10',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
-                            fontSize: 20,
-                            letterSpacing: 0.5))],) 
-                        ),
-
-                      
-                      ],
-                      ),
+                          Container(
+                            child: const Text('Dec',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
+                                    fontSize: 10,
+                                    letterSpacing: 0.5)),
+                            decoration: const BoxDecoration(
+                                border: Border(
+                                    bottom: BorderSide(
+                                        color: Colors.white, width: 2))),
+                          ),
+                          const Text('10',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  letterSpacing: 0.5))
+                        ],
+                      )),
+                ],
+              ),
             ),
             Expanded(
               child: Container(
@@ -70,19 +77,10 @@ class _CustomCardState extends State<CustomCard> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const <Widget>[
-                    Text('All Team Meet',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black,
-                            fontSize: 14,
-                            letterSpacing: 0.5)),
-                    Text('Sun, Jan 9, 7:30 PM GMT+5:30',
-                        style: TextStyle(
-                            height: 1.5,
-                            color: Color(0xFF1B1B1F),
-                            fontSize: 12,
-                            letterSpacing: 0.5)),
+                  children: <Widget>[
+                    MyFonts().header("All Team Meet", Colors.black),
+                    MyFonts().subheader("Sun, Jan 9, 7:30 PM GMT+5:30",
+                        const Color(0xff425466)),
                   ],
                 ),
               ),
@@ -98,11 +96,14 @@ class _CustomCardState extends State<CustomCard> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const <Widget>[
-                   Icon(Icons.settings, color: Colors.white,size: 20.0,)
+                  Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                    size: 20.0,
+                  )
                 ],
               ),
             ),
-            
           ]),
         ),
       ),
