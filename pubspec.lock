@@ -29,6 +29,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.8.2"
+
   bloc:
     dependency: transitive
     description:
@@ -36,6 +37,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "8.0.2"
+
   boolean_selector:
     dependency: transitive
     description:
@@ -333,6 +335,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.11"
+
+  material_color_utilities:
+    dependency: transitive
+    description:
+      name: material_color_utilities
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.3"
+
   meta:
     dependency: transitive
     description:
@@ -477,6 +488,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
+
     version: "0.4.3"
   timing:
     dependency: transitive
@@ -485,6 +497,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+
   typed_data:
     dependency: transitive
     description:
@@ -499,6 +512,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
+
   watcher:
     dependency: transitive
     description:
@@ -523,3 +537,4 @@ packages:
 sdks:
   dart: ">=2.14.0 <3.0.0"
   flutter: ">=1.26.0-17.6.pre"
+
