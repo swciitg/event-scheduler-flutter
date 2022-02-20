@@ -44,3 +44,18 @@ class EventError extends EventState {
   List<Object?> get props => [];
 
 }
+class RsvpEvent extends EventState{
+  final Rsvp rsvp;
+  RsvpEvent(this.rsvp);
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+}
+
+class RsvpLoaded extends EventState{
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+
+}
