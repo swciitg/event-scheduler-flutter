@@ -39,4 +39,15 @@ class MyFonts {
           fontSize: 10.0, fontFamily: 'Inter', fontWeight: FontWeight.w600),
     );
   }
+
+  Text capital(text, color) {
+    return Text(text,
+        style: const TextStyle(
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Roboto',
+            fontSize: 14,
+            letterSpacing: 2));
+  }
+
+  
 }
