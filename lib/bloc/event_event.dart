@@ -74,3 +74,57 @@ class EventDelete extends EventEvent{
   // TODO: implement props
   List<Object?> get props => [event];
 }
+
+class GetAllRsvp extends EventEvent{
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+
+}
+class GetAllNotRsvp extends EventEvent{
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+
+}
+
+class GetAllRsvpSpecific extends EventEvent{
+  final String clubname;
+
+  GetAllRsvpSpecific(this.clubname);
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+
+}
+class GetAllNotRsvpSpecific extends EventEvent{
+  final String clubname;
+
+  GetAllNotRsvpSpecific(this.clubname);
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+
+}
+
+class AddRsvp extends EventEvent{
+  final int id;
+
+  AddRsvp(this.id);
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+
+}
+
+class RemoveRsvp extends EventEvent{
+  final int id;
+
+  RemoveRsvp(this.id);
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+
+}

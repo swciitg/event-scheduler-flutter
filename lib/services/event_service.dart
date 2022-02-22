@@ -1,3 +1,4 @@
+import '../model/Rsvp.dart';
 import '../model/Error.dart';
 import '../model/Event.dart';
 import '../model/NestedRequest.dart';
@@ -153,6 +154,96 @@ class EventService{
       print(err);
       throw err;
     }
+  }
+
+  Future<Rsvp> getAllRsvp()async{
+    try{
+      final url = Uri.parse(baseUrl + rsvpAll);
+      final response = await getCommonRsvpBody(url);
+      if(response["message"]){
+        throw HttpException(response['message']);
+      }
+      Rsvp _rsvpAll = Rsvp.fromJson(response);
+      return _rsvpAll;
+    }catch(err){
+      throw err;
+    }
+  }
+
+  Future<Rsvp> getAllNotRsvp()async{
+    try{
+      final url = Uri.parse(baseUrl + rsvpAllNot);
+      final response = await getCommonRsvpBody(url);
+      if(response["message"]){
+        throw HttpException(response['message']);
+      }
+      Rsvp _rsvpAll = Rsvp.fromJson(response);
+      return _rsvpAll;
+    }catch(err){
+      throw err;
+    }
+  }
+
+  Future<Rsvp> getAllRsvpSpecific(String clubname)async{
+    try{
+      final url = Uri.parse(baseUrl + rsvpAllSpecific + clubname + "/");
+      final response = await getCommonRsvpBody(url);
+      if(response["message"]){
+        throw HttpException(response['message']);
+      }
+      Rsvp _rsvpAll = Rsvp.fromJson(response);
+      return _rsvpAll;
+    }catch(err){
+      throw err;
+    }
+  }
+
+  Future<Rsvp> getAllNotRsvpSpecific(String clubname)async{
+    try{
+      final url = Uri.parse(baseUrl + rsvpAllNotSpecific + clubname + "/");
+      final response = await getCommonRsvpBody(url);
+      if(response["message"]){
+        throw HttpException(response['message']);
+      }
+      Rsvp _rsvpAll = Rsvp.fromJson(response);
+      return _rsvpAll;
+    }catch(err){
+      throw err;
+    }
+  }
+
+  Future<void> addRsvp(int id)async{
+    try{
+      final url = Uri.parse(baseUrl + addrsvp + "$id");
+      final response = await getCommonRsvpBody(url);
+    }catch(err){
+      throw err;
+    }
+  }
+
+  Future<void> removeRsvp(int id)async{
+    try{
+      final url = Uri.parse(baseUrl + removersvp + "$id");
+      final response = await getCommonRsvpBody(url);
+    }catch(err){
+      throw err;
+    }
+  }
+
+  Future<dynamic> getCommonRsvpBody(Uri url)async{
+    final jwt = await Jwt.getJwt();
+    String _jwt = jwt.toString();
+    final res = await http.get(
+        url,
+        headers: {
+          "Authorization":jwt ?? "",
+          'Charset': 'utf-8',
+          'Content-Type': 'application/json;charset=UTF-8',
+        }
+    );
+    await Jwt.setJwt(res.headers['jwt'] ?? _jwt);
+    final response = json.decode(res.body);
+    return response;
   }
 
   Future<void> microsoftLogin(Microsoft token) async{

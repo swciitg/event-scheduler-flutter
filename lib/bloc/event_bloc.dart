@@ -2,12 +2,13 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:event_schedular_flutter/model/Error.dart';
-import 'package:event_schedular_flutter/model/Event.dart';
-import 'package:event_schedular_flutter/model/NestedRequest.dart';
-import 'package:event_schedular_flutter/model/authentication/Login.dart';
-import 'package:event_schedular_flutter/services/event_service.dart';
-import 'package:event_schedular_flutter/model/nested/PaymentPageViewFeedback.dart';
+import '../model/Error.dart';
+import '../model/Event.dart';
+import '../model/NestedRequest.dart';
+import '../model/Rsvp.dart';
+import '../model/authentication/Login.dart';
+import '../services/event_service.dart';
+import '../model/nested/PaymentPageViewFeedback.dart';
 
 part 'event_event.dart';
 part 'event_state.dart';
@@ -86,6 +87,66 @@ class EventBloc extends Bloc<EventEvent, EventState> {
         await _eventService.deleteEvent(event.event);
         emit(EventLoaded());
       }on HttpException catch(err){
+        emit(EventError(err.toString()));
+      }
+    });
+
+    on<GetAllRsvp>((event, emit)async{
+      try{
+        emit(EventLoading());
+        final res = await _eventService.getAllRsvp();
+        emit(RsvpEvent(res));
+      } on HttpException catch(err){
+        emit(EventError(err.toString()));
+      }
+    });
+
+    on<GetAllNotRsvp>((event, emit)async{
+      try{
+        emit(EventLoading());
+        final res = await _eventService.getAllNotRsvp();
+        emit(RsvpEvent(res));
+      } on HttpException catch(err){
+        emit(EventError(err.toString()));
+      }
+    });
+
+    on<GetAllRsvpSpecific>((event, emit)async{
+      try{
+        emit(EventLoading());
+        final res = await _eventService.getAllRsvpSpecific(event.clubname);
+        emit(RsvpEvent(res));
+      } on HttpException catch(err){
+        emit(EventError(err.toString()));
+      }
+    });
+
+    on<GetAllNotRsvpSpecific>((event, emit)async{
+      try{
+        emit(EventLoading());
+        final res = await _eventService.getAllNotRsvpSpecific(event.clubname);
+        emit(RsvpEvent(res));
+      } on HttpException catch(err){
+        emit(EventError(err.toString()));
+      }
+    });
+
+    on<AddRsvp>((event, emit)async{
+      try{
+        emit(EventLoading());
+        await _eventService.addRsvp(event.id);
+        emit(RsvpLoaded());
+      } on HttpException catch(err){
+        emit(EventError(err.toString()));
+      }
+    });
+
+    on<RemoveRsvp>((event, emit)async{
+      try{
+        emit(EventLoading());
+        await _eventService.removeRsvp(event.id);
+        emit(RsvpLoaded());
+      } on HttpException catch(err){
         emit(EventError(err.toString()));
       }
     });
