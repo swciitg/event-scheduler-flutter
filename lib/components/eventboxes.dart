@@ -67,8 +67,10 @@ class EventBoxes extends StatelessWidget {
                       ),
                     ),
                     const Padding(
-                      padding: EdgeInsets.only(right:10.0),
-                      child: Calendar(color: Color(0xffDD3730),)
+                      padding: EdgeInsets.only(right: 10.0),
+                      child: Calendar(
+                        color: Color(0xffDD3730),
+                      ),
                     ),
                   ],
                 ),
