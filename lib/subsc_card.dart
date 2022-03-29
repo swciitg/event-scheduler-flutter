@@ -1,3 +1,4 @@
+import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:event_schedular_flutter/globals/text_themes.dart';
@@ -34,8 +35,9 @@ class _CustomCardState extends State<CustomCard> {
             Container(
               width: 50.0,
               height: 50.0,
-              decoration: const BoxDecoration(
-                color: Color(0xff3D55BE),
+              decoration:  const BoxDecoration(
+                color: kclubsideButtonSelectedTabColor,
+                
                 shape: BoxShape.circle,
               ),
               child: Column(

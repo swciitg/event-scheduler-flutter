@@ -29,10 +29,18 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.2
   datetime_picker_formfield: ^2.0.0
+  flutter_bloc: ^8.0.1
+  http: ^0.13.4
+  equatable:
+  intl: ^0.17.0
+  json_annotation:
+  flutter_secure_storage:
   flutter:
     sdk: flutter
 
 dev_dependencies:
+  build_runner:
+  json_serializable:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

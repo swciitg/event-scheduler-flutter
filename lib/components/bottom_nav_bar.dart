@@ -1,5 +1,4 @@
 import 'package:event_schedular_flutter/screens/event_screen.dart';
-import 'package:event_schedular_flutter/screens/homescreen.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 

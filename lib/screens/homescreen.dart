@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
-  int _selectedIndex = 0;
+  // int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {

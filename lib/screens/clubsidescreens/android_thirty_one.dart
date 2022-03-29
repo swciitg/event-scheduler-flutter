@@ -1,11 +1,5 @@
-import 'package:event_schedular_flutter/components/rounded_button.dart';
-import 'package:event_schedular_flutter/globals/text_themes.dart';
 import 'package:event_schedular_flutter/screens/clubsidescreens/new_mail_screen.dart';
 import 'package:event_schedular_flutter/screens/clubsidescreens/new_reminder_mail_screen.dart';
-import 'package:event_schedular_flutter/screens/clubsidescreens/registration_mail_screen.dart';
-import 'package:event_schedular_flutter/screens/clubsidescreens/screendemo.dart';
-import 'package:event_schedular_flutter/screens/event_screen.dart';
-import 'package:event_schedular_flutter/screens/homescreen.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -21,14 +15,14 @@ class AndroidThirtyOne extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                color: Color(0xffC1C1FF),
+                color: kclubsideTabbarBackgroundColor,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        color: Color(0xffC1C1FF),
+                        color: kclubsideTabbarBackgroundColor,
                         child: TabBar(
                           isScrollable: true,
                           tabs: [
@@ -39,7 +33,7 @@ class AndroidThirtyOne extends StatelessWidget {
                               text: 'New Reminder Mail',
                             ),
                           ],
-                          labelColor: Color(0xff3D55BE),
+                          labelColor: kclubsideButtonSelectedTabColor,
                           unselectedLabelColor: Colors.white,
                           labelStyle: TextStyle(
                             fontSize: 16,

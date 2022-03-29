@@ -1,5 +1,3 @@
-import 'package:event_schedular_flutter/components/calendar.dart';
-import 'package:event_schedular_flutter/components/rounded_button.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +27,7 @@ class ScheduledEmailsBoxes extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(right: 10.0, top: 20.0, bottom: 20.0,left: 16.0),
-            child: Container(
+            child: SizedBox(
               height: 27,
               width: 55,
               child: Material(

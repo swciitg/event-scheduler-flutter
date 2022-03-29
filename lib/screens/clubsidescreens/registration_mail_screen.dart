@@ -1,9 +1,7 @@
-import 'package:event_schedular_flutter/components/bottom_nav_bar.dart';
 import 'package:event_schedular_flutter/components/bottom_nav_bar_clubfest.dart';
 import 'package:event_schedular_flutter/components/scheduled_emails_boxes.dart';
 import 'package:event_schedular_flutter/screens/clubsidescreens/android_thirty.dart';
 import 'package:event_schedular_flutter/screens/clubsidescreens/android_thirty_one.dart';
-import 'package:event_schedular_flutter/screens/clubsidescreens/new_mail_screen.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -87,7 +85,7 @@ class RegistrationMailScreen extends StatelessWidget {
                           width: 70,
                           child: Material(
                             elevation: 2.0,
-                            color: Color(0xff3D55BE),
+                            color: kclubsideButtonSelectedTabColor,
                             borderRadius: BorderRadius.circular(100.0),
                             child: MaterialButton(
                               onPressed: () {
@@ -161,7 +159,7 @@ class RegistrationMailScreen extends StatelessWidget {
                   width: 80,
                   child: Material(
                     elevation: 2.0,
-                    color: Color(0xff3D55BE),
+                    color: kclubsideButtonSelectedTabColor,
                     borderRadius: BorderRadius.circular(100.0),
                     child: MaterialButton(
                       onPressed: () {

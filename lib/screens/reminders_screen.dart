@@ -6,6 +6,8 @@ import '../components/reminderrectangle.dart';
 class ReminderScreen extends StatefulWidget {
   static const String id = 'reminder_screen';
 
+  const ReminderScreen({Key? key}) : super(key: key);
+
   @override
   _ReminderScreenState createState() => _ReminderScreenState();
 }
@@ -16,7 +18,6 @@ class _ReminderScreenState extends State<ReminderScreen> {
     super.initState();
   }
 
-  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +69,11 @@ class _ReminderScreenState extends State<ReminderScreen> {
     );
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  // void _onItemTapped(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  // }
 }
 
 class Reminders extends StatelessWidget {

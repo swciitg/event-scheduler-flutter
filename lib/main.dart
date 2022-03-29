@@ -15,6 +15,8 @@ void main() {
 }
 
 class EventSchedular extends StatelessWidget {
+  const EventSchedular({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,9 +29,9 @@ class EventSchedular extends StatelessWidget {
         AndroidTwentySix.id: (context) => const AndroidTwentySix(),
         AndroidThirtyOne.id: (context) => const AndroidThirtyOne(),
         DateTimeLearn.id: (context) =>  DateTimeLearn(),
-        NewAnnouncementScreen.id: (context) => NewAnnouncementScreen(),
-        NewMailScreen.id: (context) => NewMailScreen(),
-        Example2.id: (context) => Example2(),
+        NewAnnouncementScreen.id: (context) => const NewAnnouncementScreen(),
+        NewMailScreen.id: (context) => const NewMailScreen(),
+        Example2.id: (context) => const Example2(),
       },
     );
   }

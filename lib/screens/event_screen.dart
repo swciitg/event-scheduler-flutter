@@ -8,6 +8,8 @@ import '../components/eventboxes.dart';
 class EventScreen extends StatefulWidget {
   static const String id = 'event_screen';
 
+  const EventScreen({Key? key}) : super(key: key);
+
   @override
   _EventScreenState createState() => _EventScreenState();
 }
@@ -105,7 +107,7 @@ class _EventScreenState extends State<EventScreen> {
                       // disabledColor: const Color(0xffF4F3FC),
                       // borderColor: const Color(0xFFFEFBFF),
                       fillColor: const Color(0xFFF2F1FA),
-                      // splashColor: const Color(0xff3D55BE),
+                      // splashColor: const kclubsideButtonSelectedTabColor,
                       onPressed: (int index) {
                         setState(() {
                           _isSelected[index] = !_isSelected[index];

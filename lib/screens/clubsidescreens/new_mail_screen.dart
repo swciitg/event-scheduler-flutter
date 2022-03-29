@@ -1,17 +1,7 @@
-import 'dart:ffi';
-
-import 'package:event_schedular_flutter/components/rounded_button.dart';
 import 'package:event_schedular_flutter/globals/text_themes.dart';
-import 'package:event_schedular_flutter/screens/clubsidescreens/registration_mail_screen.dart';
-import 'package:event_schedular_flutter/screens/clubsidescreens/screendemo.dart';
-import 'package:event_schedular_flutter/screens/event_screen.dart';
-import 'package:event_schedular_flutter/screens/homescreen.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 // For changing the language
@@ -214,7 +204,7 @@ class NewMailScreen extends StatelessWidget {
                                           builder: (context, child) => Theme(
                                             data: ThemeData().copyWith(
                                               colorScheme: ColorScheme.light(
-                                                primary: Color(0xff3D55BE),
+                                                primary: kclubsideButtonSelectedTabColor,
                                                 onPrimary: Color(0xffffffff),
                                                 primaryVariant:
                                                     Color(0xff3700b3),
@@ -280,9 +270,9 @@ class NewMailScreen extends StatelessWidget {
                                                   Theme(
                                                     data: ThemeData().copyWith(
                                                       colorScheme:
-                                                          ColorScheme.dark(
+                                                           ColorScheme.dark(
                                                         primary:
-                                                            Color(0xff3D55BE),
+                                                            kclubsideButtonSelectedTabColor,
                                                         onPrimary:
                                                             Color(0xffffffff),
                                                         primaryVariant:
@@ -323,7 +313,7 @@ class NewMailScreen extends StatelessWidget {
             width: 100.0,
             child: Material(
               elevation: 2.0,
-              color: Color(0xff3D55BE),
+              color: kclubsideButtonSelectedTabColor,
               borderRadius: BorderRadius.circular(100.0),
               child: MaterialButton(
                 onPressed: () {},
@@ -352,74 +342,76 @@ class NewMailScreen extends StatelessWidget {
   }
 }
 
-class BasicDateField extends StatelessWidget {
-  final format = DateFormat("dd-MM-yyyy");
-  @override
-  Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      // Text('Basic date field (${format.pattern})'),
-      DateTimeField(
-        format: format,
-        onShowPicker: (context, currentValue) {
-          return showDatePicker(
-              builder: (context, child) => Theme(
-                    data: ThemeData().copyWith(
-                      colorScheme: ColorScheme.dark(
-                        primary: Color(0xff3D55BE),
-                        onPrimary: Color(0xffffffff),
-                        primaryVariant: Color(0xff000000),
-                        surface: Color(0x001F1F1F),
-                        onSurface: Color(0xff000000),
-                      ),
-                      dialogBackgroundColor: Color(0xffEFEFFF),
-                    ),
-                    child: child!,
-                  ),
-              context: context,
-              firstDate: DateTime(1900),
-              initialDate: currentValue ?? DateTime.now(),
-              lastDate: DateTime(2100));
-        },
-      ),
-    ]);
-  }
-}
+// class BasicDateField extends StatelessWidget {
+//   final format = DateFormat("dd-MM-yyyy");
 
-class BasicTimeField extends StatelessWidget {
-  final format = DateFormat("hh:mm a");
-  @override
-  Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      Text('Basic time field (${format.pattern})'),
-      DateTimeField(
-        format: format,
-        onShowPicker: (context, currentValue) async {
-          final TimeOfDay? time = await showTimePicker(
-            context: context,
-            initialTime: TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
-            builder: (context, child) => Theme(
-              data: ThemeData().copyWith(
-                colorScheme: ColorScheme.light(
-                  primary: Color(0xff3D55BE),
-                  onPrimary: Color(0xffffffff),
-                  primaryVariant: Color(0xff3700b3),
-                  // surface: Color(0x001F1F1F),
-                  // onSurface:Color(0xffffffff),
-                  onBackground: Color(0xffF1EFFF),
-                  background: Colors.green,
-                ),
-                dialogBackgroundColor: Colors.green,
-              ),
-              // data: ThemeData().copyWith(
-              //   backgroundColor: Colors.green,
-              // ),
-              child: child!,
-              // data
-            ),
-          );
-          return time == null ? null : DateTimeField.convert(time);
-        },
-      ),
-    ]);
-  }
-}
+//   BasicDateField({Key? key}) : super(key: key);
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(children: <Widget>[
+//       // Text('Basic date field (${format.pattern})'),
+//       DateTimeField(
+//         format: format,
+//         onShowPicker: (context, currentValue) {
+//           return showDatePicker(
+//               builder: (context, child) => Theme(
+//                     data: ThemeData().copyWith(
+//                       colorScheme: const ColorScheme.dark(
+//                         primary: kclubsideButtonSelectedTabColor,
+//                         onPrimary: Color(0xffffffff),
+//                         primaryVariant: Color(0xff000000),
+//                         surface: Color(0x001F1F1F),
+//                         onSurface: Color(0xff000000),
+//                       ),
+//                       dialogBackgroundColor: Color(0xffEFEFFF),
+//                     ),
+//                     child: child!,
+//                   ),
+//               context: context,
+//               firstDate: DateTime(1900),
+//               initialDate: currentValue ?? DateTime.now(),
+//               lastDate: DateTime(2100));
+//         },
+//       ),
+//     ]);
+//   }
+// }
+
+// class BasicTimeField extends StatelessWidget {
+//   final format = DateFormat("hh:mm a");
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(children: <Widget>[
+//       Text('Basic time field (${format.pattern})'),
+//       DateTimeField(
+//         format: format,
+//         onShowPicker: (context, currentValue) async {
+//           final TimeOfDay? time = await showTimePicker(
+//             context: context,
+//             initialTime: TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+//             builder: (context, child) => Theme(
+//               data: ThemeData().copyWith(
+//                 colorScheme: ColorScheme.light(
+//                   primary: kclubsideButtonSelectedTabColor,
+//                   onPrimary: Color(0xffffffff),
+//                   primaryVariant: Color(0xff3700b3),
+//                   // surface: Color(0x001F1F1F),
+//                   // onSurface:Color(0xffffffff),
+//                   onBackground: Color(0xffF1EFFF),
+//                   background: Colors.green,
+//                 ),
+//                 dialogBackgroundColor: Colors.green,
+//               ),
+//               // data: ThemeData().copyWith(
+//               //   backgroundColor: Colors.green,
+//               // ),
+//               child: child!,
+//               // data
+//             ),
+//           );
+//           return time == null ? null : DateTimeField.convert(time);
+//         },
+//       ),
+//     ]);
+//   }
+// }

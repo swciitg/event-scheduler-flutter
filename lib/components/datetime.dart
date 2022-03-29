@@ -1,5 +1,4 @@
-import 'dart:async';
-
+import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -11,6 +10,8 @@ const appName = 'DateTimeField Example';
 
 class DateTimeLearn extends StatefulWidget {
   static const String id = 'DateTimeLearn';
+
+  const DateTimeLearn({Key? key}) : super(key: key);
   @override
   DateTimeLearnState createState() => DateTimeLearnState();
 }
@@ -88,7 +89,7 @@ class BasicDateField extends StatelessWidget {
               builder: (context, child) => Theme(
                     data: ThemeData().copyWith(
                       colorScheme: ColorScheme.dark(
-                        primary: Color(0xff3D55BE),
+                        primary: kclubsideButtonSelectedTabColor,
                         onPrimary: Color(0xffffffff),
                         primaryVariant: Color(0xff000000),
                         surface: Color(0x001F1F1F),
@@ -123,7 +124,7 @@ class BasicTimeField extends StatelessWidget {
             builder: (context, child) => Theme(
               data: ThemeData().copyWith(
                 colorScheme: ColorScheme.light(
-                  primary: Color(0xff3D55BE),
+                  primary: kclubsideButtonSelectedTabColor,
                   onPrimary: Color(0xffffffff),
                   primaryVariant: Color(0xff3700b3),
                   // surface: Color(0x001F1F1F),

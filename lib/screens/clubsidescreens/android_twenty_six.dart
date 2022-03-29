@@ -5,7 +5,6 @@ import 'package:event_schedular_flutter/screens/clubsidescreens/screendemo.dart'
 import 'package:event_schedular_flutter/screens/event_screen.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 
 class AndroidTwentySix extends StatelessWidget {
   const AndroidTwentySix({Key? key}) : super(key: key);
@@ -27,8 +26,8 @@ class AndroidTwentySix extends StatelessWidget {
             child: GestureDetector(
               onTap: () {
                 // get size of the context
-                final size = MediaQuery.of(context).size;
-                print(size);
+                // final size = MediaQuery.of(context).size;
+                // print(size);
               },
               child: kleftArrowIcon,
             ),
@@ -41,8 +40,7 @@ class AndroidTwentySix extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
       ),
-      body: Container(
-        child: Column(
+      body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             
@@ -171,7 +169,7 @@ class AndroidTwentySix extends StatelessWidget {
                           text: 'Insights',
                         ),
                       ],
-                      labelColor: Color(0xff3D55BE),
+                      labelColor: kclubsideButtonSelectedTabColor,
                       unselectedLabelColor: Color(0xff1D192B),
                       labelStyle: TextStyle(
                         fontSize: 8,
@@ -179,9 +177,9 @@ class AndroidTwentySix extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height - 280,
-                    child: TabBarView(children: [
+                  Container(
+                  //  height: MediaQuery.of(context).size.height - 280,
+                    child:TabBarView(children: [
                       const Demo(),
                       EventScreen(),
                       const AnnouncementScreen(),
@@ -189,52 +187,51 @@ class AndroidTwentySix extends StatelessWidget {
                       const RegistrationMailScreen(),
                       const Demo(),
                     ]),
-                  )
+                  ),
                 ],
               ),
             ),
           ],
-        ),
       ),
     );
   }
 }
 
-class WidgetSize extends StatefulWidget {
-  final Widget child;
-  final Function onChange;
+// class WidgetSize extends StatefulWidget {
+//   final Widget child;
+//   final Function onChange;
 
-  const WidgetSize({
-    Key? key,
-    required this.onChange,
-    required this.child,
-  }) : super(key: key);
+//   const WidgetSize({
+//     Key? key,
+//     required this.onChange,
+//     required this.child,
+//   }) : super(key: key);
 
-  @override
-  _WidgetSizeState createState() => _WidgetSizeState();
-}
+//   @override
+//   _WidgetSizeState createState() => _WidgetSizeState();
+// }
 
-class _WidgetSizeState extends State<WidgetSize> {
-  @override
-  Widget build(BuildContext context) {
-    SchedulerBinding.instance!.addPostFrameCallback(postFrameCallback);
-    return Container(
-      key: widgetKey,
-      child: widget.child,
-    );
-  }
+// class _WidgetSizeState extends State<WidgetSize> {
+//   @override
+//   Widget build(BuildContext context) {
+//     SchedulerBinding.instance!.addPostFrameCallback(postFrameCallback);
+//     return Container(
+//       key: widgetKey,
+//       child: widget.child,
+//     );
+//   }
 
-  var widgetKey = GlobalKey();
-  var oldSize;
+//   var widgetKey = GlobalKey();
+//   var oldSize;
 
-  void postFrameCallback(_) {
-    var context = widgetKey.currentContext;
-    if (context == null) return;
+//   void postFrameCallback(_) {
+//     var context = widgetKey.currentContext;
+//     if (context == null) return;
 
-    var newSize = context.size;
-    if (oldSize == newSize) return;
+//     var newSize = context.size;
+//     if (oldSize == newSize) return;
 
-    oldSize = newSize;
-    widget.onChange(newSize);
-  }
-}
+//     oldSize = newSize;
+//     widget.onChange(newSize);
+//   }
+// }

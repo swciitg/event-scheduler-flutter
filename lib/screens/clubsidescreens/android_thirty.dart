@@ -1,9 +1,4 @@
-import 'package:event_schedular_flutter/components/rounded_button.dart';
 import 'package:event_schedular_flutter/globals/text_themes.dart';
-import 'package:event_schedular_flutter/screens/clubsidescreens/registration_mail_screen.dart';
-import 'package:event_schedular_flutter/screens/clubsidescreens/screendemo.dart';
-import 'package:event_schedular_flutter/screens/event_screen.dart';
-import 'package:event_schedular_flutter/screens/homescreen.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -90,7 +85,7 @@ class AndroidThirty extends StatelessWidget {
                 width: 150,
                 child: Material(
                   elevation: 2.0,
-                  color: Color(0xff3D55BE),
+                  color: kclubsideButtonSelectedTabColor,
                   borderRadius: BorderRadius.circular(100.0),
                   child: MaterialButton(
                     onPressed: () {},
@@ -141,7 +136,7 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
                 ),
               ),
             ],
-            backgroundColor: Color(0xffC1C1FF),
+            backgroundColor: kclubsideTabbarBackgroundColor,
             // toolbarHeight: 30,
           ),
         ],
