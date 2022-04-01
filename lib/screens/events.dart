@@ -1,5 +1,5 @@
+import 'package:event_schedular_flutter/components/event_card.dart';
 import 'package:flutter/material.dart';
-import 'package:event_schedular_flutter/event_card.dart';
 import 'package:event_schedular_flutter/globals/text_themes.dart';
 
 class Subscriptions extends StatefulWidget {
