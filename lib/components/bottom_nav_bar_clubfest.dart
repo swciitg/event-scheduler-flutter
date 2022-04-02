@@ -1,4 +1,4 @@
-import 'package:event_schedular_flutter/screens/event_screen.dart';
+import 'package:event_schedular_flutter/screens/android_five.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -73,7 +73,7 @@ class _BottomNavBarClubFestState extends State<BottomNavBarClubFest> {
             onTap: () {
               // _onItemTapped(1);
               if (_selectedIndex == 0) {
-                Navigator.pushNamed(context, EventScreen.id);
+                Navigator.pushNamed(context, AndroidFive.id);
               }
             },
             child: Container(

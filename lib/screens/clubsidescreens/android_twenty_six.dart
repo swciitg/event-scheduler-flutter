@@ -2,7 +2,7 @@
 import 'package:event_schedular_flutter/screens/clubsidescreens/announcement_screen.dart';
 import 'package:event_schedular_flutter/screens/clubsidescreens/registration_mail_screen.dart';
 import 'package:event_schedular_flutter/screens/clubsidescreens/screendemo.dart';
-import 'package:event_schedular_flutter/screens/event_screen.dart';
+import 'package:event_schedular_flutter/screens/android_five.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -181,9 +181,9 @@ class AndroidTwentySix extends StatelessWidget {
                   //  height: MediaQuery.of(context).size.height - 280,
                     child:TabBarView(children: [
                       const Demo(),
-                      EventScreen(),
+                      AndroidFive(),
                       const AnnouncementScreen(),
-                      EventScreen(),
+                      AndroidFive(),
                       const RegistrationMailScreen(),
                       const Demo(),
                     ]),

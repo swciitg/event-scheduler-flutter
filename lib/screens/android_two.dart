@@ -1,18 +1,18 @@
 import 'package:event_schedular_flutter/components/bottom_nav_bar.dart';
-import 'package:event_schedular_flutter/screens/reminders_screen.dart';
+import 'package:event_schedular_flutter/screens/android_four.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../components/eventrectangle.dart';
 
-class HomeScreen extends StatefulWidget {
+class AndroidTwo extends StatefulWidget {
   static const String id = 'home_screen';
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _AndroidTwoState createState() => _AndroidTwoState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _AndroidTwoState extends State<AndroidTwo> {
   @override
   void initState() {
     super.initState();
@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, ReminderScreen.id);
+                Navigator.pushNamed(context, AndroidFour.id);
               },
               child: knotificationnone,
             ),

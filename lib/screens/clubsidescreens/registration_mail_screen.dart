@@ -7,30 +7,7 @@ import 'package:flutter/material.dart';
 
 class RegistrationMailScreen extends StatelessWidget {
   const RegistrationMailScreen({Key? key}) : super(key: key);
-  void _showOverlay(BuildContext context) async {
-    // Declaring and Initializing OverlayState
-    // and OverlayEntry objects
-    OverlayState? overlayState = Overlay.of(context);
-    OverlayEntry overlayEntry;
-    overlayEntry = OverlayEntry(builder: (context) {
-      // You can return any widget you like
-      // here to be displayed on the Overlay
-      return Positioned(
-        left: MediaQuery.of(context).size.width * -0.035,
-        top: MediaQuery.of(context).size.height * 0.2,
-        child: const AndroidThirty(),
-      );
-    });
-
-    // Inserting the OverlayEntry into the Overlay
-    overlayState!.insert(overlayEntry);
-
-    // Awaiting for 3 seconds
-    await Future.delayed(Duration(seconds: 5));
-
-    // Removing the OverlayEntry from the Overlay
-    overlayEntry.remove();
-  }
+ 
 
   @override
   Widget build(BuildContext context) {

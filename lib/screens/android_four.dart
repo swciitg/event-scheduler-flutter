@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 
 import '../components/reminderrectangle.dart';
 
-class ReminderScreen extends StatefulWidget {
+class AndroidFour extends StatefulWidget {
   static const String id = 'reminder_screen';
 
-  const ReminderScreen({Key? key}) : super(key: key);
+  const AndroidFour({Key? key}) : super(key: key);
 
   @override
-  _ReminderScreenState createState() => _ReminderScreenState();
+  _AndroidFourState createState() => _AndroidFourState();
 }
 
-class _ReminderScreenState extends State<ReminderScreen> {
+class _AndroidFourState extends State<AndroidFour> {
   @override
   void initState() {
     super.initState();
