@@ -178,7 +178,7 @@ class AndroidTwentySix extends StatelessWidget {
                     ),
                   ),
                   Container(
-                  //  height: MediaQuery.of(context).size.height - 280,
+                   height: MediaQuery.of(context).size.height - 280,
                     child:TabBarView(children: [
                       const Demo(),
                       AndroidFive(),

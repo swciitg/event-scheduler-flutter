@@ -21,13 +21,31 @@ void main() {
 class EventSchedular extends StatelessWidget {
   const EventSchedular({Key? key}) : super(key: key);
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     home: BlocProvider(
+  //       create: (context) => EventBloc(EventService()),
+  //       child: const LoginSample(),
+  //     ),
+  //   );
+  // }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: BlocProvider(
-        create: (context) => EventBloc(EventService()),
-        child: const LoginSample(),
-      ),
+      initialRoute: AndroidTwentySix.id,
+      routes: {
+        AndroidTwo.id: (context) => AndroidTwo(),
+        AndroidFour.id: (context) => AndroidFour(),
+        AndroidFive.id: (context) => AndroidFive(),
+        AndroidThirty.id: (context) => const AndroidThirty(),
+        AndroidTwentySix.id: (context) => const AndroidTwentySix(),
+        AndroidThirtyOne.id: (context) => const AndroidThirtyOne(),
+        DateTimeLearn.id: (context) => DateTimeLearn(),
+        NewAnnouncementScreen.id: (context) => const NewAnnouncementScreen(),
+        NewMailScreen.id: (context) => const NewMailScreen(),
+        Example2.id: (context) => const Example2(),
+      },
     );
   }
 }
