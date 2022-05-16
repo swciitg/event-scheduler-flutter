@@ -67,8 +67,10 @@ class EventBoxes extends StatelessWidget {
                       ),
                     ),
                     const Padding(
-                      padding: EdgeInsets.only(right:10.0),
-                      child: Calendar(color: Color(0xffDD3730),)
+                      padding: EdgeInsets.only(right: 10.0),
+                      child: Calendar(
+                        color: Color(0xffDD3730),
+                      ),
                     ),
                   ],
                 ),
@@ -149,7 +151,7 @@ class EventBoxes extends StatelessWidget {
                               child: RoundedButton(
                                 text: 'Undo RSVP',
                                 onPressed: () {},
-                                colour: Color(0xff3D55BE),
+                                colour: kclubsideButtonSelectedTabColor,
                                 textColor: Colors.white,
                                 fontSize: 14,
                                 radius: 100,

@@ -39,4 +39,20 @@ class MyFonts {
           fontSize: 10.0, fontFamily: 'Inter', fontWeight: FontWeight.w600),
     );
   }
+
+  Text regmailheader(text, color) {
+    return Text(
+      text,
+      style: const TextStyle(
+          fontSize: 14.0, fontFamily: 'Roboto', fontWeight: FontWeight.w500),
+    );
+  }
+
+  Text regmailsubheader(text, color) {
+    return Text(
+      text,
+      style: const TextStyle(
+          fontSize: 12.0, fontFamily: 'Roboto', fontWeight: FontWeight.w400),
+    );
+  }
 }

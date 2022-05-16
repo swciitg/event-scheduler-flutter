@@ -17,14 +17,12 @@ class Calendar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5)),
             child: Column(
               children: [
-                Container(
-                  child: Text('Dec',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: color,
-                          fontSize: 8,
-                          letterSpacing: 0.5)),
-                ),
+                Text('Dec',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: color,
+                        fontSize: 8,
+                        letterSpacing: 0.5)),
                 Container(
                   child: Text('10',
                       style: TextStyle(

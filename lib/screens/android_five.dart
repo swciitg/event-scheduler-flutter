@@ -1,20 +1,28 @@
+import 'package:event_schedular_flutter/bloc/event_bloc.dart';
 import 'package:event_schedular_flutter/components/bottom_nav_bar.dart';
 import 'package:event_schedular_flutter/components/eventboxes.dart';
+import 'package:event_schedular_flutter/model/Event.dart';
+import 'package:event_schedular_flutter/model/Rsvp.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../components/eventboxes.dart';
 
-class EventScreen extends StatefulWidget {
+class AndroidFive extends StatefulWidget {
   static const String id = 'event_screen';
 
+  const AndroidFive({Key? key}) : super(key: key);
+
   @override
-  _EventScreenState createState() => _EventScreenState();
+  _AndroidFiveState createState() => _AndroidFiveState();
 }
 
-class _EventScreenState extends State<EventScreen> {
+class _AndroidFiveState extends State<AndroidFive> {
   @override
   void initState() {
+    final instance = BlocProvider.of<EventBloc>(context);
+    instance.add(GetAllRsvp());
     super.initState();
   }
 
@@ -76,7 +84,7 @@ class _EventScreenState extends State<EventScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top:18,right: 24.0),
+                    padding: const EdgeInsets.only(top: 18, right: 24.0),
                     child: ToggleButtons(
                       constraints: const BoxConstraints(
                         minWidth: 53,
@@ -105,7 +113,7 @@ class _EventScreenState extends State<EventScreen> {
                       // disabledColor: const Color(0xffF4F3FC),
                       // borderColor: const Color(0xFFFEFBFF),
                       fillColor: const Color(0xFFF2F1FA),
-                      // splashColor: const Color(0xff3D55BE),
+                      // splashColor: const kclubsideButtonSelectedTabColor,
                       onPressed: (int index) {
                         setState(() {
                           _isSelected[index] = !_isSelected[index];
@@ -124,7 +132,6 @@ class _EventScreenState extends State<EventScreen> {
         ],
       ),
     );
-
   }
 }
 
@@ -134,38 +141,72 @@ class AllEvents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const eventBox = EventBoxes(
-      groupName: "Today",
-      placeholder: 'secondary text',
-    );
-    List<EventBoxes> eventBoxes = [eventBox];
+    // const eventBox = EventBoxes(
+    //   groupName: "Today",
+    //   placeholder: 'secondary text',
+    // );
+    List<EventBoxes> eventBoxes = [];
 
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    eventBoxes.add(eventBox);
-    return ListView.separated(
-      separatorBuilder: (context, index) {
-        return const SizedBox(
-          height: 8.0,
+    return BlocBuilder<EventBloc, EventState>(builder: (context, state) {
+      if(state is EventLoading){
+        return Center(child: CircularProgressIndicator(),);
+      }
+      if (state is RsvpEvent) {
+        Rsvp listEvents = state.rsvp;
+        listEvents.rsvp!.forEach((element) {
+          final eventBox = EventBoxes(
+            groupName: element.title,
+            placeholder: element.subtitle.toString(),
+          );
+          eventBoxes.add(eventBox);
+        });
+        return ListView.separated(
+          separatorBuilder: (context, index) {
+            return const SizedBox(
+              height: 8.0,
+            );
+          },
+          itemCount: eventBoxes.length,
+          itemBuilder: (context, index) {
+            return eventBoxes[index];
+          },
         );
-      },
-      itemCount: eventBoxes.length,
-      itemBuilder: (context, index) {
-        return eventBoxes[index];
-      },
-    );
+      } else {
+        return Container(
+          child: Center(
+            child: Text("Didn't Load"),
+          ),
+        );
+      }
+    });
+
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+    // eventBoxes.add(eventBox);
+
+    // return ListView.separated(
+    //   separatorBuilder: (context, index) {
+    //     return const SizedBox(
+    //       height: 8.0,
+    //     );
+    //   },
+    //   itemCount: eventBoxes.length,
+    //   itemBuilder: (context, index) {
+    //     return eventBoxes[index];
+    //   },
+    // );
   }
 }

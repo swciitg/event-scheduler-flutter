@@ -2,15 +2,15 @@ import 'package:event_schedular_flutter/screens/android_five.dart';
 import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
-class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({required this.calledfrom, Key? key}) : super(key: key);
+class BottomNavBarClubFest extends StatefulWidget {
+  const BottomNavBarClubFest({required this.calledfrom, Key? key}) : super(key: key);
   final int calledfrom;
 
   @override
-  _BottomNavBarState createState() => _BottomNavBarState();
+  _BottomNavBarClubFestState createState() => _BottomNavBarClubFestState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
+class _BottomNavBarClubFestState extends State<BottomNavBarClubFest> {
   @override
   void initState() {
     super.initState();
@@ -51,14 +51,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Icons.home_outlined,
+                    Icons.event,
                     color: _selectedIndex == 0 ? activeColor : inactiveColor,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   Text(
-                    "Home",
+                    "Event",
                     style: TextStyle(
                         color:
                             _selectedIndex == 0 ? activeColor : inactiveColor),
@@ -87,14 +87,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Icons.event,
+                    Icons.bar_chart,
                     color: _selectedIndex == 1 ? activeColor : inactiveColor,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   Text(
-                    "Events",
+                    "Stats",
                     style: TextStyle(
                         color:
                             _selectedIndex == 1 ? activeColor : inactiveColor),
@@ -120,14 +120,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Icons.people_alt_outlined,
+                    Icons.insights,
                     color: _selectedIndex == 2 ? activeColor : inactiveColor,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   Text(
-                    "Clubs&Fest",
+                    "Insights",
                     style: TextStyle(
                         color:
                             _selectedIndex == 2 ? activeColor : inactiveColor),

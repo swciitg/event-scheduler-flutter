@@ -3,20 +3,21 @@ import 'package:flutter/material.dart';
 
 import '../components/reminderrectangle.dart';
 
-class ReminderScreen extends StatefulWidget {
+class AndroidFour extends StatefulWidget {
   static const String id = 'reminder_screen';
 
+  const AndroidFour({Key? key}) : super(key: key);
+
   @override
-  _ReminderScreenState createState() => _ReminderScreenState();
+  _AndroidFourState createState() => _AndroidFourState();
 }
 
-class _ReminderScreenState extends State<ReminderScreen> {
+class _AndroidFourState extends State<AndroidFour> {
   @override
   void initState() {
     super.initState();
   }
 
-  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +69,11 @@ class _ReminderScreenState extends State<ReminderScreen> {
     );
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  // void _onItemTapped(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  // }
 }
 
 class Reminders extends StatelessWidget {

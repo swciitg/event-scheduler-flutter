@@ -33,7 +33,7 @@ class EventRectangle extends StatelessWidget {
                   height: 40.0,
                   width: 40.0,
                   decoration: BoxDecoration(
-                    color: const Color(0Xff3D55BE),
+                    color:  kclubsideButtonSelectedTabColor,
                     borderRadius: BorderRadius.circular(100),
                   ),
                   child: Center(
